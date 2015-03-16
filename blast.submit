@@ -1,0 +1,24 @@
+universe = vanilla
+ 
+executable = blast_wrapper.sh
+arguments  = ./blastp -db yeast.aa -query query1
+ 
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+transfer_input_files = http://stash.osgconnect.net/+dweitzel/blast/bin/blastp, \
+http://stash.osgconnect.net/+dweitzel/blast/data/yeast.aa, \
+http://stash.osgconnect.net/+dweitzel/blast/data/yeast.aa.phr, \
+http://stash.osgconnect.net/+dweitzel/blast/data/yeast.aa.pin, \
+http://stash.osgconnect.net/+dweitzel/blast/data/yeast.aa.pnd, \
+http://stash.osgconnect.net/+dweitzel/blast/data/yeast.aa.pni, \
+http://stash.osgconnect.net/+dweitzel/blast/data/yeast.aa.psd, \
+http://stash.osgconnect.net/+dweitzel/blast/data/yeast.aa.psi, \
+http://stash.osgconnect.net/+dweitzel/blast/data/yeast.aa.psq, \
+http://stash.osgconnect.net/+dweitzel/blast/queries/query1
+ 
+output = job.out
+error = job.err
+log = job.log
+ 
+ 
+queue
