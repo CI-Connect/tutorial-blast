@@ -1,4 +1,4 @@
-Running BLAST on OSG
+# Having a BLAST on OSG
 
     * [Introduction](#introduction)
     * [What is BLAST?](#what-is-blast)
