@@ -1,12 +1,12 @@
 # Having a BLAST on OSG
 
-    * [Introduction](#introduction)
-    * [What is BLAST?](#what-is-blast)
-    * [Execution of BLAST](#execution-of-blast)
-    * [Preparing Input](#preparing-input)
-    * [Job Submission](#job-submission)
-    * [Next Steps](#next-steps)
-    * [Getting Help](#getting-help)
+ * [Introduction](#introduction)
+ * [What is BLAST?](#what-is-blast)
+ * [Execution of BLAST](#execution-of-blast)
+ * [Preparing Input](#preparing-input)
+ * [Job Submission](#job-submission)
+ * [Next Steps](#next-steps)
+ * [Getting Help](#getting-help)
 
 
 ## Introduction
