@@ -98,11 +98,9 @@ $ condor_submit blast.submit
 You can watch the job then with `condor_q`.  The output of the blast run will be in `blast.out`.  
 
 ## Next Steps
-Not all BLAST databases are small enough to use HTTP.  Any files that are larger than a few hundred MB's is too large for HTTP.  The current nr database is several GB's.  In that case, a possible solution is to partition the database, and run several jobs for each query (or set of queries) to search each of the partitions.  In that case, you only transfer the partition of the database that you need, reducing the required input data.
+Not all BLAST databases are small enough to use HTTP.  Any files that are larger than a few hundred MB's is too large for HTTP. The current nr database is several GB's.  In that case, a possible solution is to partition the database, and run several jobs for each query (or set of queries) to search each of the partitions.  In that case, you only transfer the partition of the database that you need, reducing the required input data.
 
-For references on how to partition the database:
-BLAST Parallelization on Partitioned Databases with Primary Fragments
-The issue with partitioning the database is not how to cut the database, but rather how to stitch back together the output of BLAST.  Especially the E value and and output.
+For references on how to partition the database, see [BLAST Parallelization on Partitioned Databases with Primary Fragments](http://vecpar.fe.up.pt/2008/hpdg08_papers/4.pdf). The issue with partitioning the database is not how to cut the database, but rather how to stitch back together the output of BLAST. Especially the E value and and output.
 
 ## Getting Help
 For assistance or questions, please email the OSG User Support team  at `user-support@opensciencegrid.org` or visit the [help desk and community forums](http://support.opensciencegrid.org).
