@@ -37,64 +37,54 @@ Both need to be on the worker node when a job is executed.  The blast executable
 ## Preparing Input
 
 Place your BLAST executable and your database in the public web directory on OSG Connect, `~/data/public/`.  For this tutorial, I have already done this in my public directory, and you can use it. I have provided the below links for you. You do not need to download them into your home directory, you can use mine for now.
-```
-Executable: http://stash.osgconnect.net/+dweitzel/blast/bin/blastp
-Database: 
-http://stash.osgconnect.net/+dweitzel/blast/data/yeast.aa
-http://stash.osgconnect.net/+dweitzel/blast/data/yeast.aa.phr
-http://stash.osgconnect.net/+dweitzel/blast/data/yeast.aa.pin
-http://stash.osgconnect.net/+dweitzel/blast/data/yeast.aa.pnd
-http://stash.osgconnect.net/+dweitzel/blast/data/yeast.aa.pni
-http://stash.osgconnect.net/+dweitzel/blast/data/yeast.aa.psd
-http://stash.osgconnect.net/+dweitzel/blast/data/yeast.aa.psi
-http://stash.osgconnect.net/+dweitzel/blast/data/yeast.aa.psq
-```
+	Executable: http://stash.osgconnect.net/+dweitzel/blast/bin/blastp
+	Database: 
+	http://stash.osgconnect.net/+dweitzel/blast/data/yeast.aa
+	http://stash.osgconnect.net/+dweitzel/blast/data/yeast.aa.phr
+	http://stash.osgconnect.net/+dweitzel/blast/data/yeast.aa.pin
+	http://stash.osgconnect.net/+dweitzel/blast/data/yeast.aa.pnd
+	http://stash.osgconnect.net/+dweitzel/blast/data/yeast.aa.pni
+	http://stash.osgconnect.net/+dweitzel/blast/data/yeast.aa.psd
+	http://stash.osgconnect.net/+dweitzel/blast/data/yeast.aa.psi
+	http://stash.osgconnect.net/+dweitzel/blast/data/yeast.aa.psq
 Since the files are hosted on a webserver, they can be cached at sites by using forward proxies, which are widely deployed on the OSG.
 
 ## Job Submission
 
 To obtain the blast tutorial files, type
-``` 
-$ tutorial blast
-```
+	$ tutorial blast
 The submit file will need to list all of the input files, the executable, the database, and the input query file.  We will use a quick wrapper around blast in order to execute blast correctly.  
-```
-#!/bin/sh
-module load blast
-chmod +x $1
-"$@"
-```
+	#!/bin/sh
+	module load blast
+	chmod +x $1
+	"$@"
 Next, we will write the BLAST submit file.
-```
-universe = vanilla
- 
-executable = blast_wrapper.sh
-arguments  = ./blastp -db yeast.aa -query query1
- 
-should_transfer_files = YES
-when_to_transfer_output = ON_EXIT
-transfer_input_files = http://stash.osgconnect.net/+dweitzel/blast/bin/blastp, \
-http://stash.osgconnect.net/+dweitzel/blast/data/yeast.aa, \
-http://stash.osgconnect.net/+dweitzel/blast/data/yeast.aa.phr, \
-http://stash.osgconnect.net/+dweitzel/blast/data/yeast.aa.pin, \
-http://stash.osgconnect.net/+dweitzel/blast/data/yeast.aa.pnd, \
-http://stash.osgconnect.net/+dweitzel/blast/data/yeast.aa.pni, \
-http://stash.osgconnect.net/+dweitzel/blast/data/yeast.aa.psd, \
-http://stash.osgconnect.net/+dweitzel/blast/data/yeast.aa.psi, \
-http://stash.osgconnect.net/+dweitzel/blast/data/yeast.aa.psq, \
-http://stash.osgconnect.net/+dweitzel/blast/queries/query1
- 
-output = blast.out
-error = blast.err
-log = blast.log
-
-queue
-```
+	universe = vanilla
+	 
+	executable = blast_wrapper.sh
+	arguments  = ./blastp -db yeast.aa -query query1
+	 
+	should_transfer_files = YES
+	when_to_transfer_output = ON_EXIT
+	transfer_input_files = http://stash.osgconnect.net/+dweitzel/blast/bin/blastp, \
+	http://stash.osgconnect.net/+dweitzel/blast/data/yeast.aa, \
+	http://stash.osgconnect.net/+dweitzel/blast/data/yeast.aa.phr, \
+	http://stash.osgconnect.net/+dweitzel/blast/data/yeast.aa.pin, \
+	http://stash.osgconnect.net/+dweitzel/blast/data/yeast.aa.pnd, \
+	http://stash.osgconnect.net/+dweitzel/blast/data/yeast.aa.pni, \
+	http://stash.osgconnect.net/+dweitzel/blast/data/yeast.aa.psd, \
+	http://stash.osgconnect.net/+dweitzel/blast/data/yeast.aa.psi, \
+	http://stash.osgconnect.net/+dweitzel/blast/data/yeast.aa.psq, \
+	http://stash.osgconnect.net/+dweitzel/blast/queries/query1
+	 
+	output = blast.out
+	error = blast.err
+	log = blast.log
+	
+	queue
 
 Submit the job with condor_submit:
-```
-$ condor_submit blast.submit
-```
+	$ condor_submit blast.submit
 You can watch the job then with `condor_q`.  The output of the blast run will be in `blast.out`.  
 
 ## Next Steps
