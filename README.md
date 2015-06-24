@@ -1,4 +1,5 @@
-[Title]:- Sequence Search with BLAST
+[title]: - "Sequence Search with BLAST"
+
 
  * [Introduction](#introduction)
  * [What is BLAST?](#what-is-blast)
