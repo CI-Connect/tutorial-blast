@@ -1,4 +1,4 @@
-# Having a BLAST on OSG
+[Title]:- Sequence Search with BLAST
 
  * [Introduction](#introduction)
  * [What is BLAST?](#what-is-blast)
