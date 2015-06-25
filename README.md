@@ -85,4 +85,4 @@ Not all BLAST databases are small enough to use HTTP.  Any files that are larger
 For references on how to partition the database, see [BLAST Parallelization on Partitioned Databases with Primary Fragments](http://vecpar.fe.up.pt/2008/hpdg08_papers/4.pdf). The issue with partitioning the database is not how to cut the database, but rather how to stitch back together the output of BLAST. Especially the E value and and output.
 
 ## Getting Help
-For assistance or questions, please email the OSG User Support team  at `user-support@opensciencegrid.org` or visit the [help desk and community forums](http://support.opensciencegrid.org).
+For assistance or questions, please email the OSG User Support team  at [user-support@opensciencegrid.org](mailto:user-support@opensciencegrid.org) or visit the [help desk and community forums](http://support.opensciencegrid.org).
