@@ -1,5 +1,5 @@
 [title]: - "Sequence Search with BLAST"
-
+[TOC]
 
 ## Introduction
 We're going to run a real scientific application, BLAST.
