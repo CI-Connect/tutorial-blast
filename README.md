@@ -1,15 +1,6 @@
 [title]: - "Sequence Search with BLAST"
 
 
- * [Introduction](#introduction)
- * [What is BLAST?](#what-is-blast)
- * [Execution of BLAST](#execution-of-blast)
- * [Preparing Input](#preparing-input)
- * [Job Submission](#job-submission)
- * [Next Steps](#next-steps)
- * [Getting Help](#getting-help)
-
-
 ## Introduction
 We're going to run a real scientific application, BLAST.
 
