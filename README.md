@@ -69,9 +69,9 @@ Next, we will write the BLAST submit file.
 	http://stash.osgconnect.net/+dweitzel/blast/data/yeast.aa.psq, \
 	http://stash.osgconnect.net/+dweitzel/blast/queries/query1
 	 
-	output = blast.out
-	error = blast.err
-	log = blast.log
+	output = job.out
+	error = job.err
+	log = job.log
 	
 	queue
 
